@@ -1,0 +1,6 @@
+altair
+pandas
+streamlit
+sklearn
+sweetviz
+numpy
