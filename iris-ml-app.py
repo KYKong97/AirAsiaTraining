@@ -40,7 +40,10 @@ grid_table = AgGrid(
     update_mode=GridUpdateMode.SELECTION_CHANGED,
     theme="material",
 )
-
+options = [st.selectbox(
+    'How would you like to be contacted?',
+    ('Email', 'Home phone', 'Mobile phone'))]
+df['Options'] = options
 edited_df = st.experimental_data_editor(df, num_rows="dynamic")
 
 iris = datasets.load_iris()
