@@ -53,11 +53,11 @@ options = [st.selectbox(
 df['Options'] = options
 edited_df = st.experimental_data_editor(df, num_rows="dynamic")
 
-csv = convert_df(df)
+
 
 st.download_button(
    "Press to Download",
-   csv,
+   convert_df(edited_df['data']),
    "file.csv",
    "text/csv",
    key='download-csv'
