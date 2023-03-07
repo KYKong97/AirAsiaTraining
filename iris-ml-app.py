@@ -57,7 +57,7 @@ edited_df = st.experimental_data_editor(df, num_rows="dynamic")
 
 st.download_button(
    "Press to Download",
-   convert_df(edited_df['data']),
+   convert_df(gd['data']),
    "file.csv",
    "text/csv",
    key='download-csv'
