@@ -32,7 +32,7 @@ st.subheader('User Input parameters')
 gd = GridOptionsBuilder.from_dataframe(df)
 gd.configure_pagination(enabled=True)
 gd.configure_default_column(editable=True, groupable=True)
-gd.configure_selection(selection_mode="multiple", use_checkbox=True)
+gd.configure_selection(selection_mode="multiple")
 gridoptions = gd.build()
 grid_table = AgGrid(
     df,
