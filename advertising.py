@@ -24,7 +24,7 @@ def user_input_features():
 
 df = user_input_features()
 
-raw_df = pd.read_csv('/content/Advertising.csv')
+raw_df = pd.read_csv('Advertising.csv')
 
 st.subheader('User Input parameters')
 st.write(df)
