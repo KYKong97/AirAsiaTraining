@@ -26,7 +26,7 @@ def user_input_features():
 df = user_input_features()
 
 st.subheader('User Input parameters')
-st.write(df)
+st.st.experimental_data_editor(df)
 
 iris = datasets.load_iris()
 X = iris.data
