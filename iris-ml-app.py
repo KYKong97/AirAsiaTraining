@@ -13,6 +13,11 @@ This app predicts the **Iris flower** type!
 
 st.sidebar.header('User Input Parameters')
 
+@st.experimental_memo
+def convert_df(df):
+   return df.to_csv(index=False).encode('utf-8')
+
+
 def user_input_features():
     sepal_length = st.sidebar.slider('Sepal length', 4.3, 7.9, 5.4)
     sepal_width = st.sidebar.slider('Sepal width', 2.0, 4.4, 3.4)
@@ -47,6 +52,16 @@ options = [st.selectbox(
     ('Email', 'Home phone', 'Mobile phone'))]
 df['Options'] = options
 edited_df = st.experimental_data_editor(df, num_rows="dynamic")
+
+csv = convert_df(df)
+
+st.download_button(
+   "Press to Download",
+   csv,
+   "file.csv",
+   "text/csv",
+   key='download-csv'
+)
 
 iris = datasets.load_iris()
 X = iris.data
