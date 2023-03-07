@@ -41,6 +41,8 @@ grid_table = AgGrid(
     theme="material",
 )
 
+edited_df = st.experimental_data_editor(df, num_rows="dynamic")
+
 iris = datasets.load_iris()
 X = iris.data
 Y = iris.target
